@@ -1,0 +1,48 @@
+@import "compass/reset";
+
+
+
+$color: red;
+$link_color: #d2d2d2;
+$btn_color: #4298f4;
+
+h1 {
+	color: $color;
+}
+
+ul {
+	font-size: 14px;
+	a {
+		color: $link_color;
+		text-decoration: none;
+		&:hover {
+			color: green;
+			font-size: 16px;
+			text-decoration: none;
+		}
+	}
+	div & + a {
+		color: orange;
+		text-decoration: none;
+	}
+}
+
+@mixin border-radius($border_radius) {
+	border-radius: $border_radius;
+	-moz-border-radius: $border_radius;
+	-ms-border-radius: $border_radius;
+}
+
+
+.container {
+	border: 1px solid grey;
+	@include border-radius(10px);
+}
+
+.btn {
+	border-radius: 5px;
+	color: $btn_color;
+	border: 1px solid $btn_color;
+	background-color: $btn_color;
+}
+
